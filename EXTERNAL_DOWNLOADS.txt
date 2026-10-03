@@ -1,0 +1,27 @@
+EffoVPR external resources
+==========================
+
+The project loads these resources programmatically using the installed Hugging Face libraries. No browser download or web research is required.
+
+1) DINOv2 ViT-L/14 with registers
+   Model ID: facebook/dinov2-with-registers-large
+   Cache: artifacts/cache/huggingface/models
+
+2) VN_Attractions dataset
+   Dataset ID: PhamPhien/VN_Attractions
+   Split: train
+   Cache: artifacts/cache/huggingface/datasets
+
+Download by running:
+
+   .\venv\Scripts\python.exe -m scripts.audit_dataset --config configs/effovpr_vn_attractions.yaml
+
+The audit command downloads/loads the dataset. The first model-backed command (for example smoke_test.py or train.py) downloads/loads the backbone. To download both through the main pipeline:
+
+   .\venv\Scripts\python.exe -m scripts.run_experiments --stages audit split smoke
+
+If Hugging Face access requires authentication in this environment, authenticate through the installed CLI:
+
+   .\venv\Scripts\hf.exe auth login
+
+No other external dataset or model is required by the implementation.

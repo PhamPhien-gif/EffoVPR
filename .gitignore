@@ -1,0 +1,44 @@
+# Virtual environment
+venv/
+.venv/
+
+# Python cache
+__pycache__/
+.pytest_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Model weights
+*.ckpt
+*.pth
+*.pt
+*.safetensors
+*.onnx
+
+# Generated outputs
+artifacts/
+outputs/
+results/
+runs/
+
+# Local databases / indexes
+qdrant_db/
+*.db
+*.sqlite
+*.sqlite3
+
+# Large datasets
+data/
+datasets/
+downloads/
+
+# Environment secrets
+.env
+.env.*
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

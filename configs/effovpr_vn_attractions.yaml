@@ -1,0 +1,44 @@
+model:
+  backbone: "facebook/dinov2-with-registers-large"
+  global_dim: 1024
+  fine_tune_last_n_layers: 5
+  with_registers: true
+  cosface_scale: 30.0
+  cosface_margin: 0.4
+  cache_dir: "artifacts/cache/huggingface/models"
+
+dataset:
+  identifier: "PhamPhien/VN_Attractions"
+  source_split: "train"
+  cache_dir: "artifacts/cache/huggingface/datasets"
+
+training:
+  batch_size: 16
+  epochs: 25
+  training_resolution: 224
+  backbone_lr: 1e-5
+  classifier_lr: 1e-5
+  weight_decay: 0.01
+  mixed_precision: false
+  workers: 0
+  gradient_accumulation_steps: 1
+
+inference:
+  resolution: 504
+
+reranking:
+  enabled: true
+  top_k: 100
+  layer: "n-1"
+  zero_shot_layer: "n-2"
+  facet: "V"
+  T1: 0.05
+  T2: 0.65
+
+retrieval:
+  backend: "faiss"
+  index_type: "IndexFlatIP"
+  normalize: true
+
+evaluation:
+  k_values: [1, 5, 10]
