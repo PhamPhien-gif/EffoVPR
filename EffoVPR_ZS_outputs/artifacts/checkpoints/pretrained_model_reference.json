@@ -1,0 +1,61 @@
+{
+  "kind": "pretrained_model_reference_not_finetuned_weights",
+  "model_id": "facebook/dinov2-with-registers-large",
+  "snapshot_path": "/kaggle/working/EffoVPR_ZS/artifacts/cache/huggingface/models/models--facebook--dinov2-with-registers-large/snapshots/e4c89a4e05589de9b3e188688a303d0f3c04d0f3",
+  "mode": "effovpr-zs",
+  "dataset_id": "PhamPhien/VN_Attractions",
+  "dataset_split": "train",
+  "dataset_samples": 6682,
+  "dataset_classes": 41,
+  "configuration": {
+    "model": {
+      "backbone": "facebook/dinov2-with-registers-large",
+      "global_dim": 1024,
+      "fine_tune_last_n_layers": 5,
+      "with_registers": true,
+      "cosface_scale": 30.0,
+      "cosface_margin": 0.4,
+      "cache_dir": "/kaggle/working/EffoVPR_ZS/artifacts/cache/huggingface/models"
+    },
+    "dataset": {
+      "identifier": "PhamPhien/VN_Attractions",
+      "source_split": "train",
+      "cache_dir": "/kaggle/working/EffoVPR_ZS/artifacts/cache/huggingface/datasets"
+    },
+    "training": {
+      "batch_size": 4,
+      "epochs": 25,
+      "training_resolution": 224,
+      "backbone_lr": 1e-05,
+      "classifier_lr": 1e-05,
+      "weight_decay": 0.01,
+      "mixed_precision": true,
+      "workers": 2,
+      "gradient_accumulation_steps": 1
+    },
+    "inference": {
+      "resolution": 504
+    },
+    "reranking": {
+      "enabled": true,
+      "top_k": 100,
+      "layer": "n-1",
+      "zero_shot_layer": "n-2",
+      "facet": "V",
+      "T1": 0.05,
+      "T2": 0.65
+    },
+    "retrieval": {
+      "backend": "faiss",
+      "index_type": "IndexFlatIP",
+      "normalize": true
+    },
+    "evaluation": {
+      "k_values": [
+        1,
+        5,
+        10
+      ]
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id_sha256": "e712a27fdf4de9ce8582cc7534cca0aef7fc1ac162018eaad2080156c2051404",
+  "ratios": {
+    "gallery": 0.1,
+    "test_queries": 0.1,
+    "train": 0.7,
+    "val_queries": 0.1
+  },
+  "sample_count": 6682,
+  "seed": 42,
+  "split_csv_sha256": {
+    "gallery": "de18ffbca1a839cc6781847e08d8e4e18480177998efff8f852a51decf697cbc",
+    "test_queries": "15865f1929f8b79bfddf5b2f524c837a0c78703f84542e069f9e044750b9f018",
+    "train": "8525e9f830bcec84abc7636982376fe8a8212d0a9e5b10b4bc087d8a433e80ca",
+    "val_queries": "84ca318be0c4bfd8e6cab1fde76bec45992f29e80f80917657c8c741930643d9"
+  }
+}

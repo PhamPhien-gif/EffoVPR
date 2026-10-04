@@ -1,0 +1,665 @@
+id,label,dataset_index,split
+sample_000057,Bà Nà Hills - Cầu Vàng,57,val_queries
+sample_000082,Bà Nà Hills - Cầu Vàng,82,val_queries
+sample_000009,Bà Nà Hills - Cầu Vàng,9,val_queries
+sample_000016,Bà Nà Hills - Cầu Vàng,16,val_queries
+sample_000034,Bà Nà Hills - Cầu Vàng,34,val_queries
+sample_000101,Bà Nà Hills - Cầu Vàng,101,val_queries
+sample_000006,Bà Nà Hills - Cầu Vàng,6,val_queries
+sample_000041,Bà Nà Hills - Cầu Vàng,41,val_queries
+sample_000064,Bà Nà Hills - Cầu Vàng,64,val_queries
+sample_000014,Bà Nà Hills - Cầu Vàng,14,val_queries
+sample_000097,Bà Nà Hills - Cầu Vàng,97,val_queries
+sample_000357,Bưu Điện Sài Gòn,357,val_queries
+sample_000257,Bưu Điện Sài Gòn,257,val_queries
+sample_000316,Bưu Điện Sài Gòn,316,val_queries
+sample_000346,Bưu Điện Sài Gòn,346,val_queries
+sample_000402,Bưu Điện Sài Gòn,402,val_queries
+sample_000280,Bưu Điện Sài Gòn,280,val_queries
+sample_000287,Bưu Điện Sài Gòn,287,val_queries
+sample_000387,Bưu Điện Sài Gòn,387,val_queries
+sample_000372,Bưu Điện Sài Gòn,372,val_queries
+sample_000390,Bưu Điện Sài Gòn,390,val_queries
+sample_000360,Bưu Điện Sài Gòn,360,val_queries
+sample_000320,Bưu Điện Sài Gòn,320,val_queries
+sample_000409,Bưu Điện Sài Gòn,409,val_queries
+sample_000267,Bưu Điện Sài Gòn,267,val_queries
+sample_000359,Bưu Điện Sài Gòn,359,val_queries
+sample_000367,Bưu Điện Sài Gòn,367,val_queries
+sample_000413,Bưu Điện Sài Gòn,413,val_queries
+sample_000252,Bưu Điện Sài Gòn,252,val_queries
+sample_000143,Bến Ninh Kiều,143,val_queries
+sample_000184,Bến Ninh Kiều,184,val_queries
+sample_000190,Bến Ninh Kiều,190,val_queries
+sample_000236,Bến Ninh Kiều,236,val_queries
+sample_000174,Bến Ninh Kiều,174,val_queries
+sample_000117,Bến Ninh Kiều,117,val_queries
+sample_000202,Bến Ninh Kiều,202,val_queries
+sample_000209,Bến Ninh Kiều,209,val_queries
+sample_000161,Bến Ninh Kiều,161,val_queries
+sample_000132,Bến Ninh Kiều,132,val_queries
+sample_000176,Bến Ninh Kiều,176,val_queries
+sample_000123,Bến Ninh Kiều,123,val_queries
+sample_000749,Chùa Bái Đính,749,val_queries
+sample_000818,Chùa Bái Đính,818,val_queries
+sample_000851,Chùa Bái Đính,851,val_queries
+sample_000830,Chùa Bái Đính,830,val_queries
+sample_000738,Chùa Bái Đính,738,val_queries
+sample_000838,Chùa Bái Đính,838,val_queries
+sample_000742,Chùa Bái Đính,742,val_queries
+sample_000761,Chùa Bái Đính,761,val_queries
+sample_000835,Chùa Bái Đính,835,val_queries
+sample_000798,Chùa Bái Đính,798,val_queries
+sample_000800,Chùa Bái Đính,800,val_queries
+sample_000716,Chùa Bái Đính,716,val_queries
+sample_000796,Chùa Bái Đính,796,val_queries
+sample_000816,Chùa Bái Đính,816,val_queries
+sample_000802,Chùa Bái Đính,802,val_queries
+sample_000709,Chùa Bái Đính,709,val_queries
+sample_000925,Chùa Hương,925,val_queries
+sample_000933,Chùa Hương,933,val_queries
+sample_000981,Chùa Hương,981,val_queries
+sample_000935,Chùa Hương,935,val_queries
+sample_000961,Chùa Hương,961,val_queries
+sample_000873,Chùa Hương,873,val_queries
+sample_001004,Chùa Hương,1004,val_queries
+sample_001008,Chùa Hương,1008,val_queries
+sample_000976,Chùa Hương,976,val_queries
+sample_000968,Chùa Hương,968,val_queries
+sample_000967,Chùa Hương,967,val_queries
+sample_000948,Chùa Hương,948,val_queries
+sample_000917,Chùa Hương,917,val_queries
+sample_000980,Chùa Hương,980,val_queries
+sample_001016,Chùa Hương,1016,val_queries
+sample_001027,Chùa Hương,1027,val_queries
+sample_001025,Chùa Hương,1025,val_queries
+sample_001233,Chùa Một Cột,1233,val_queries
+sample_001136,Chùa Một Cột,1136,val_queries
+sample_001218,Chùa Một Cột,1218,val_queries
+sample_001054,Chùa Một Cột,1054,val_queries
+sample_001160,Chùa Một Cột,1160,val_queries
+sample_001237,Chùa Một Cột,1237,val_queries
+sample_001242,Chùa Một Cột,1242,val_queries
+sample_001140,Chùa Một Cột,1140,val_queries
+sample_001039,Chùa Một Cột,1039,val_queries
+sample_001082,Chùa Một Cột,1082,val_queries
+sample_001115,Chùa Một Cột,1115,val_queries
+sample_001185,Chùa Một Cột,1185,val_queries
+sample_001042,Chùa Một Cột,1042,val_queries
+sample_001081,Chùa Một Cột,1081,val_queries
+sample_001127,Chùa Một Cột,1127,val_queries
+sample_001061,Chùa Một Cột,1061,val_queries
+sample_001167,Chùa Một Cột,1167,val_queries
+sample_001123,Chùa Một Cột,1123,val_queries
+sample_001064,Chùa Một Cột,1064,val_queries
+sample_001170,Chùa Một Cột,1170,val_queries
+sample_001104,Chùa Một Cột,1104,val_queries
+sample_001106,Chùa Một Cột,1106,val_queries
+sample_001241,Chùa Một Cột,1241,val_queries
+sample_000507,Chợ Bến Thành,507,val_queries
+sample_000515,Chợ Bến Thành,515,val_queries
+sample_000446,Chợ Bến Thành,446,val_queries
+sample_000434,Chợ Bến Thành,434,val_queries
+sample_000536,Chợ Bến Thành,536,val_queries
+sample_000582,Chợ Bến Thành,582,val_queries
+sample_000422,Chợ Bến Thành,422,val_queries
+sample_000447,Chợ Bến Thành,447,val_queries
+sample_000517,Chợ Bến Thành,517,val_queries
+sample_000563,Chợ Bến Thành,563,val_queries
+sample_000465,Chợ Bến Thành,465,val_queries
+sample_000499,Chợ Bến Thành,499,val_queries
+sample_000443,Chợ Bến Thành,443,val_queries
+sample_000474,Chợ Bến Thành,474,val_queries
+sample_000510,Chợ Bến Thành,510,val_queries
+sample_000538,Chợ Bến Thành,538,val_queries
+sample_000519,Chợ Bến Thành,519,val_queries
+sample_000484,Chợ Bến Thành,484,val_queries
+sample_000475,Chợ Bến Thành,475,val_queries
+sample_000491,Chợ Bến Thành,491,val_queries
+sample_000685,Chợ Nổi Cái Răng,685,val_queries
+sample_000650,Chợ Nổi Cái Răng,650,val_queries
+sample_000632,Chợ Nổi Cái Răng,632,val_queries
+sample_000661,Chợ Nổi Cái Răng,661,val_queries
+sample_000665,Chợ Nổi Cái Răng,665,val_queries
+sample_000655,Chợ Nổi Cái Răng,655,val_queries
+sample_000668,Chợ Nổi Cái Răng,668,val_queries
+sample_000644,Chợ Nổi Cái Răng,644,val_queries
+sample_001311,Cột Cờ Lũng Cú,1311,val_queries
+sample_001274,Cột Cờ Lũng Cú,1274,val_queries
+sample_001270,Cột Cờ Lũng Cú,1270,val_queries
+sample_001438,Cột Cờ Lũng Cú,1438,val_queries
+sample_001420,Cột Cờ Lũng Cú,1420,val_queries
+sample_001304,Cột Cờ Lũng Cú,1304,val_queries
+sample_001306,Cột Cờ Lũng Cú,1306,val_queries
+sample_001331,Cột Cờ Lũng Cú,1331,val_queries
+sample_001338,Cột Cờ Lũng Cú,1338,val_queries
+sample_001322,Cột Cờ Lũng Cú,1322,val_queries
+sample_001300,Cột Cờ Lũng Cú,1300,val_queries
+sample_001356,Cột Cờ Lũng Cú,1356,val_queries
+sample_001298,Cột Cờ Lũng Cú,1298,val_queries
+sample_001367,Cột Cờ Lũng Cú,1367,val_queries
+sample_001377,Cột Cờ Lũng Cú,1377,val_queries
+sample_001313,Cột Cờ Lũng Cú,1313,val_queries
+sample_001414,Cột Cờ Lũng Cú,1414,val_queries
+sample_001335,Cột Cờ Lũng Cú,1335,val_queries
+sample_002484,Dinh Độc Lập,2484,val_queries
+sample_002469,Dinh Độc Lập,2469,val_queries
+sample_002440,Dinh Độc Lập,2440,val_queries
+sample_002480,Dinh Độc Lập,2480,val_queries
+sample_002424,Dinh Độc Lập,2424,val_queries
+sample_002472,Dinh Độc Lập,2472,val_queries
+sample_002450,Dinh Độc Lập,2450,val_queries
+sample_002546,Dinh Độc Lập,2546,val_queries
+sample_002504,Dinh Độc Lập,2504,val_queries
+sample_002518,Dinh Độc Lập,2518,val_queries
+sample_002468,Dinh Độc Lập,2468,val_queries
+sample_002456,Dinh Độc Lập,2456,val_queries
+sample_002478,Dinh Độc Lập,2478,val_queries
+sample_002442,Dinh Độc Lập,2442,val_queries
+sample_003111,Ghềnh Đá Đĩa,3111,val_queries
+sample_002971,Ghềnh Đá Đĩa,2971,val_queries
+sample_003055,Ghềnh Đá Đĩa,3055,val_queries
+sample_003027,Ghềnh Đá Đĩa,3027,val_queries
+sample_003024,Ghềnh Đá Đĩa,3024,val_queries
+sample_002951,Ghềnh Đá Đĩa,2951,val_queries
+sample_003080,Ghềnh Đá Đĩa,3080,val_queries
+sample_003035,Ghềnh Đá Đĩa,3035,val_queries
+sample_003006,Ghềnh Đá Đĩa,3006,val_queries
+sample_003082,Ghềnh Đá Đĩa,3082,val_queries
+sample_003058,Ghềnh Đá Đĩa,3058,val_queries
+sample_003104,Ghềnh Đá Đĩa,3104,val_queries
+sample_002968,Ghềnh Đá Đĩa,2968,val_queries
+sample_002996,Ghềnh Đá Đĩa,2996,val_queries
+sample_002960,Ghềnh Đá Đĩa,2960,val_queries
+sample_003043,Ghềnh Đá Đĩa,3043,val_queries
+sample_003041,Ghềnh Đá Đĩa,3041,val_queries
+sample_003114,Ghềnh Đá Đĩa,3114,val_queries
+sample_003148,Hang Sơn Đoòng,3148,val_queries
+sample_003301,Hang Sơn Đoòng,3301,val_queries
+sample_003161,Hang Sơn Đoòng,3161,val_queries
+sample_003265,Hang Sơn Đoòng,3265,val_queries
+sample_003300,Hang Sơn Đoòng,3300,val_queries
+sample_003162,Hang Sơn Đoòng,3162,val_queries
+sample_003156,Hang Sơn Đoòng,3156,val_queries
+sample_003187,Hang Sơn Đoòng,3187,val_queries
+sample_003281,Hang Sơn Đoòng,3281,val_queries
+sample_003153,Hang Sơn Đoòng,3153,val_queries
+sample_003192,Hang Sơn Đoòng,3192,val_queries
+sample_003274,Hang Sơn Đoòng,3274,val_queries
+sample_003181,Hang Sơn Đoòng,3181,val_queries
+sample_003218,Hang Sơn Đoòng,3218,val_queries
+sample_003241,Hang Sơn Đoòng,3241,val_queries
+sample_003173,Hang Sơn Đoòng,3173,val_queries
+sample_003242,Hang Sơn Đoòng,3242,val_queries
+sample_003671,Hoàng Thành Thăng Long,3671,val_queries
+sample_003748,Hoàng Thành Thăng Long,3748,val_queries
+sample_003670,Hoàng Thành Thăng Long,3670,val_queries
+sample_003698,Hoàng Thành Thăng Long,3698,val_queries
+sample_003745,Hoàng Thành Thăng Long,3745,val_queries
+sample_003737,Hoàng Thành Thăng Long,3737,val_queries
+sample_003691,Hoàng Thành Thăng Long,3691,val_queries
+sample_003695,Hoàng Thành Thăng Long,3695,val_queries
+sample_003668,Hoàng Thành Thăng Long,3668,val_queries
+sample_003762,Hoàng Thành Thăng Long,3762,val_queries
+sample_003648,Hoàng Thành Thăng Long,3648,val_queries
+sample_003735,Hoàng Thành Thăng Long,3735,val_queries
+sample_003738,Hoàng Thành Thăng Long,3738,val_queries
+sample_003686,Hoàng Thành Thăng Long,3686,val_queries
+sample_003689,Hoàng Thành Thăng Long,3689,val_queries
+sample_003368,Hồ Ba Bể,3368,val_queries
+sample_003433,Hồ Ba Bể,3433,val_queries
+sample_003347,Hồ Ba Bể,3347,val_queries
+sample_003458,Hồ Ba Bể,3458,val_queries
+sample_003399,Hồ Ba Bể,3399,val_queries
+sample_003453,Hồ Ba Bể,3453,val_queries
+sample_003405,Hồ Ba Bể,3405,val_queries
+sample_003380,Hồ Ba Bể,3380,val_queries
+sample_003314,Hồ Ba Bể,3314,val_queries
+sample_003349,Hồ Ba Bể,3349,val_queries
+sample_003361,Hồ Ba Bể,3361,val_queries
+sample_003397,Hồ Ba Bể,3397,val_queries
+sample_003436,Hồ Ba Bể,3436,val_queries
+sample_003461,Hồ Ba Bể,3461,val_queries
+sample_003481,Hồ Ba Bể,3481,val_queries
+sample_003369,Hồ Ba Bể,3369,val_queries
+sample_003391,Hồ Ba Bể,3391,val_queries
+sample_003351,Hồ Ba Bể,3351,val_queries
+sample_003578,Hồ Gươm,3578,val_queries
+sample_003537,Hồ Gươm,3537,val_queries
+sample_003497,Hồ Gươm,3497,val_queries
+sample_003519,Hồ Gươm,3519,val_queries
+sample_003632,Hồ Gươm,3632,val_queries
+sample_003593,Hồ Gươm,3593,val_queries
+sample_003549,Hồ Gươm,3549,val_queries
+sample_003566,Hồ Gươm,3566,val_queries
+sample_003577,Hồ Gươm,3577,val_queries
+sample_003589,Hồ Gươm,3589,val_queries
+sample_003611,Hồ Gươm,3611,val_queries
+sample_003608,Hồ Gươm,3608,val_queries
+sample_003626,Hồ Gươm,3626,val_queries
+sample_003630,Hồ Gươm,3630,val_queries
+sample_003552,Hồ Gươm,3552,val_queries
+sample_003583,Hồ Gươm,3583,val_queries
+sample_003916,Landmark 81,3916,val_queries
+sample_003922,Landmark 81,3922,val_queries
+sample_003887,Landmark 81,3887,val_queries
+sample_003855,Landmark 81,3855,val_queries
+sample_003877,Landmark 81,3877,val_queries
+sample_003838,Landmark 81,3838,val_queries
+sample_003828,Landmark 81,3828,val_queries
+sample_003900,Landmark 81,3900,val_queries
+sample_003848,Landmark 81,3848,val_queries
+sample_003903,Landmark 81,3903,val_queries
+sample_003891,Landmark 81,3891,val_queries
+sample_003886,Landmark 81,3886,val_queries
+sample_003810,Landmark 81,3810,val_queries
+sample_003821,Landmark 81,3821,val_queries
+sample_003944,Landmark 81,3944,val_queries
+sample_004014,Lăng Chủ Tịch Hồ Chí Minh,4014,val_queries
+sample_004072,Lăng Chủ Tịch Hồ Chí Minh,4072,val_queries
+sample_004012,Lăng Chủ Tịch Hồ Chí Minh,4012,val_queries
+sample_003988,Lăng Chủ Tịch Hồ Chí Minh,3988,val_queries
+sample_003960,Lăng Chủ Tịch Hồ Chí Minh,3960,val_queries
+sample_004023,Lăng Chủ Tịch Hồ Chí Minh,4023,val_queries
+sample_004005,Lăng Chủ Tịch Hồ Chí Minh,4005,val_queries
+sample_004094,Lăng Chủ Tịch Hồ Chí Minh,4094,val_queries
+sample_004028,Lăng Chủ Tịch Hồ Chí Minh,4028,val_queries
+sample_004020,Lăng Chủ Tịch Hồ Chí Minh,4020,val_queries
+sample_004067,Lăng Chủ Tịch Hồ Chí Minh,4067,val_queries
+sample_004003,Lăng Chủ Tịch Hồ Chí Minh,4003,val_queries
+sample_004062,Lăng Chủ Tịch Hồ Chí Minh,4062,val_queries
+sample_004027,Lăng Chủ Tịch Hồ Chí Minh,4027,val_queries
+sample_004037,Lăng Chủ Tịch Hồ Chí Minh,4037,val_queries
+sample_004149,Mù Cang Chải,4149,val_queries
+sample_004122,Mù Cang Chải,4122,val_queries
+sample_004287,Mù Cang Chải,4287,val_queries
+sample_004194,Mù Cang Chải,4194,val_queries
+sample_004282,Mù Cang Chải,4282,val_queries
+sample_004203,Mù Cang Chải,4203,val_queries
+sample_004184,Mù Cang Chải,4184,val_queries
+sample_004243,Mù Cang Chải,4243,val_queries
+sample_004099,Mù Cang Chải,4099,val_queries
+sample_004120,Mù Cang Chải,4120,val_queries
+sample_004255,Mù Cang Chải,4255,val_queries
+sample_004222,Mù Cang Chải,4222,val_queries
+sample_004280,Mù Cang Chải,4280,val_queries
+sample_004294,Mù Cang Chải,4294,val_queries
+sample_004210,Mù Cang Chải,4210,val_queries
+sample_004174,Mù Cang Chải,4174,val_queries
+sample_004239,Mù Cang Chải,4239,val_queries
+sample_004147,Mù Cang Chải,4147,val_queries
+sample_004161,Mù Cang Chải,4161,val_queries
+sample_004221,Mù Cang Chải,4221,val_queries
+sample_004299,Ngũ Hành Sơn,4299,val_queries
+sample_004406,Ngũ Hành Sơn,4406,val_queries
+sample_004361,Ngũ Hành Sơn,4361,val_queries
+sample_004355,Ngũ Hành Sơn,4355,val_queries
+sample_004435,Ngũ Hành Sơn,4435,val_queries
+sample_004431,Ngũ Hành Sơn,4431,val_queries
+sample_004424,Ngũ Hành Sơn,4424,val_queries
+sample_004352,Ngũ Hành Sơn,4352,val_queries
+sample_004359,Ngũ Hành Sơn,4359,val_queries
+sample_004328,Ngũ Hành Sơn,4328,val_queries
+sample_004385,Ngũ Hành Sơn,4385,val_queries
+sample_004331,Ngũ Hành Sơn,4331,val_queries
+sample_004327,Ngũ Hành Sơn,4327,val_queries
+sample_004452,Ngũ Hành Sơn,4452,val_queries
+sample_004320,Ngũ Hành Sơn,4320,val_queries
+sample_004413,Ngũ Hành Sơn,4413,val_queries
+sample_004396,Ngũ Hành Sơn,4396,val_queries
+sample_004367,Ngũ Hành Sơn,4367,val_queries
+sample_004408,Ngũ Hành Sơn,4408,val_queries
+sample_004375,Ngũ Hành Sơn,4375,val_queries
+sample_004651,Nhà Thờ Đức Bà,4651,val_queries
+sample_004598,Nhà Thờ Đức Bà,4598,val_queries
+sample_004674,Nhà Thờ Đức Bà,4674,val_queries
+sample_004618,Nhà Thờ Đức Bà,4618,val_queries
+sample_004527,Nhà Thờ Đức Bà,4527,val_queries
+sample_004594,Nhà Thờ Đức Bà,4594,val_queries
+sample_004659,Nhà Thờ Đức Bà,4659,val_queries
+sample_004538,Nhà Thờ Đức Bà,4538,val_queries
+sample_004500,Nhà Thờ Đức Bà,4500,val_queries
+sample_004536,Nhà Thờ Đức Bà,4536,val_queries
+sample_004516,Nhà Thờ Đức Bà,4516,val_queries
+sample_004541,Nhà Thờ Đức Bà,4541,val_queries
+sample_004523,Nhà Thờ Đức Bà,4523,val_queries
+sample_004505,Nhà Thờ Đức Bà,4505,val_queries
+sample_004572,Nhà Thờ Đức Bà,4572,val_queries
+sample_004547,Nhà Thờ Đức Bà,4547,val_queries
+sample_004610,Nhà Thờ Đức Bà,4610,val_queries
+sample_004602,Nhà Thờ Đức Bà,4602,val_queries
+sample_004668,Nhà Thờ Đức Bà,4668,val_queries
+sample_004844,Núi Bà Đen,4844,val_queries
+sample_004819,Núi Bà Đen,4819,val_queries
+sample_004698,Núi Bà Đen,4698,val_queries
+sample_004715,Núi Bà Đen,4715,val_queries
+sample_004757,Núi Bà Đen,4757,val_queries
+sample_004768,Núi Bà Đen,4768,val_queries
+sample_004721,Núi Bà Đen,4721,val_queries
+sample_004709,Núi Bà Đen,4709,val_queries
+sample_004792,Núi Bà Đen,4792,val_queries
+sample_004736,Núi Bà Đen,4736,val_queries
+sample_004805,Núi Bà Đen,4805,val_queries
+sample_004728,Núi Bà Đen,4728,val_queries
+sample_004694,Núi Bà Đen,4694,val_queries
+sample_004793,Núi Bà Đen,4793,val_queries
+sample_004778,Núi Bà Đen,4778,val_queries
+sample_004847,Núi Bà Đen,4847,val_queries
+sample_004707,Núi Bà Đen,4707,val_queries
+sample_004989,Phong Nha - Kẻ Bàng,4989,val_queries
+sample_005060,Phong Nha - Kẻ Bàng,5060,val_queries
+sample_005048,Phong Nha - Kẻ Bàng,5048,val_queries
+sample_005090,Phong Nha - Kẻ Bàng,5090,val_queries
+sample_005046,Phong Nha - Kẻ Bàng,5046,val_queries
+sample_005118,Phong Nha - Kẻ Bàng,5118,val_queries
+sample_005125,Phong Nha - Kẻ Bàng,5125,val_queries
+sample_005065,Phong Nha - Kẻ Bàng,5065,val_queries
+sample_005135,Phong Nha - Kẻ Bàng,5135,val_queries
+sample_005057,Phong Nha - Kẻ Bàng,5057,val_queries
+sample_005013,Phong Nha - Kẻ Bàng,5013,val_queries
+sample_005140,Phong Nha - Kẻ Bàng,5140,val_queries
+sample_005094,Phong Nha - Kẻ Bàng,5094,val_queries
+sample_005041,Phong Nha - Kẻ Bàng,5041,val_queries
+sample_005070,Phong Nha - Kẻ Bàng,5070,val_queries
+sample_005075,Phong Nha - Kẻ Bàng,5075,val_queries
+sample_004973,Phố Cổ Hội An,4973,val_queries
+sample_004955,Phố Cổ Hội An,4955,val_queries
+sample_004971,Phố Cổ Hội An,4971,val_queries
+sample_004861,Phố Cổ Hội An,4861,val_queries
+sample_004910,Phố Cổ Hội An,4910,val_queries
+sample_004960,Phố Cổ Hội An,4960,val_queries
+sample_004962,Phố Cổ Hội An,4962,val_queries
+sample_004924,Phố Cổ Hội An,4924,val_queries
+sample_004884,Phố Cổ Hội An,4884,val_queries
+sample_004917,Phố Cổ Hội An,4917,val_queries
+sample_004983,Phố Cổ Hội An,4983,val_queries
+sample_004948,Phố Cổ Hội An,4948,val_queries
+sample_005360,Quảng Trường Lâm Viên,5360,val_queries
+sample_005336,Quảng Trường Lâm Viên,5336,val_queries
+sample_005279,Quảng Trường Lâm Viên,5279,val_queries
+sample_005383,Quảng Trường Lâm Viên,5383,val_queries
+sample_005306,Quảng Trường Lâm Viên,5306,val_queries
+sample_005393,Quảng Trường Lâm Viên,5393,val_queries
+sample_005312,Quảng Trường Lâm Viên,5312,val_queries
+sample_005343,Quảng Trường Lâm Viên,5343,val_queries
+sample_005285,Quảng Trường Lâm Viên,5285,val_queries
+sample_005321,Quảng Trường Lâm Viên,5321,val_queries
+sample_005295,Quảng Trường Lâm Viên,5295,val_queries
+sample_005348,Quảng Trường Lâm Viên,5348,val_queries
+sample_005271,Quảng Trường Lâm Viên,5271,val_queries
+sample_005358,Quảng Trường Lâm Viên,5358,val_queries
+sample_005212,Quần Thể Tràng An,5212,val_queries
+sample_005141,Quần Thể Tràng An,5141,val_queries
+sample_005246,Quần Thể Tràng An,5246,val_queries
+sample_005143,Quần Thể Tràng An,5143,val_queries
+sample_005203,Quần Thể Tràng An,5203,val_queries
+sample_005195,Quần Thể Tràng An,5195,val_queries
+sample_005188,Quần Thể Tràng An,5188,val_queries
+sample_005158,Quần Thể Tràng An,5158,val_queries
+sample_005205,Quần Thể Tràng An,5205,val_queries
+sample_005230,Quần Thể Tràng An,5230,val_queries
+sample_005162,Quần Thể Tràng An,5162,val_queries
+sample_005222,Quần Thể Tràng An,5222,val_queries
+sample_005434,Tam Cốc - Bích Động,5434,val_queries
+sample_005420,Tam Cốc - Bích Động,5420,val_queries
+sample_005460,Tam Cốc - Bích Động,5460,val_queries
+sample_005508,Tam Cốc - Bích Động,5508,val_queries
+sample_005490,Tam Cốc - Bích Động,5490,val_queries
+sample_005561,Tam Cốc - Bích Động,5561,val_queries
+sample_005484,Tam Cốc - Bích Động,5484,val_queries
+sample_005559,Tam Cốc - Bích Động,5559,val_queries
+sample_005533,Tam Cốc - Bích Động,5533,val_queries
+sample_005578,Tam Cốc - Bích Động,5578,val_queries
+sample_005535,Tam Cốc - Bích Động,5535,val_queries
+sample_005436,Tam Cốc - Bích Động,5436,val_queries
+sample_005571,Tam Cốc - Bích Động,5571,val_queries
+sample_005538,Tam Cốc - Bích Động,5538,val_queries
+sample_005475,Tam Cốc - Bích Động,5475,val_queries
+sample_005406,Tam Cốc - Bích Động,5406,val_queries
+sample_005523,Tam Cốc - Bích Động,5523,val_queries
+sample_005426,Tam Cốc - Bích Động,5426,val_queries
+sample_006003,Thung Lũng Mường Hoa,6003,val_queries
+sample_005968,Thung Lũng Mường Hoa,5968,val_queries
+sample_005975,Thung Lũng Mường Hoa,5975,val_queries
+sample_006000,Thung Lũng Mường Hoa,6000,val_queries
+sample_005955,Thung Lũng Mường Hoa,5955,val_queries
+sample_005972,Thung Lũng Mường Hoa,5972,val_queries
+sample_005592,Thác Bản Giốc,5592,val_queries
+sample_005619,Thác Bản Giốc,5619,val_queries
+sample_005739,Thác Bản Giốc,5739,val_queries
+sample_005652,Thác Bản Giốc,5652,val_queries
+sample_005609,Thác Bản Giốc,5609,val_queries
+sample_005640,Thác Bản Giốc,5640,val_queries
+sample_005580,Thác Bản Giốc,5580,val_queries
+sample_005651,Thác Bản Giốc,5651,val_queries
+sample_005629,Thác Bản Giốc,5629,val_queries
+sample_005636,Thác Bản Giốc,5636,val_queries
+sample_005671,Thác Bản Giốc,5671,val_queries
+sample_005590,Thác Bản Giốc,5590,val_queries
+sample_005611,Thác Bản Giốc,5611,val_queries
+sample_005608,Thác Bản Giốc,5608,val_queries
+sample_005643,Thác Bản Giốc,5643,val_queries
+sample_005642,Thác Bản Giốc,5642,val_queries
+sample_005617,Thác Bản Giốc,5617,val_queries
+sample_005585,Thác Bản Giốc,5585,val_queries
+sample_005829,Thánh Địa Mỹ Sơn,5829,val_queries
+sample_005830,Thánh Địa Mỹ Sơn,5830,val_queries
+sample_005800,Thánh Địa Mỹ Sơn,5800,val_queries
+sample_005782,Thánh Địa Mỹ Sơn,5782,val_queries
+sample_005833,Thánh Địa Mỹ Sơn,5833,val_queries
+sample_005900,Thánh Địa Mỹ Sơn,5900,val_queries
+sample_005817,Thánh Địa Mỹ Sơn,5817,val_queries
+sample_005864,Thánh Địa Mỹ Sơn,5864,val_queries
+sample_005939,Thánh Địa Mỹ Sơn,5939,val_queries
+sample_005772,Thánh Địa Mỹ Sơn,5772,val_queries
+sample_005930,Thánh Địa Mỹ Sơn,5930,val_queries
+sample_005936,Thánh Địa Mỹ Sơn,5936,val_queries
+sample_005853,Thánh Địa Mỹ Sơn,5853,val_queries
+sample_005844,Thánh Địa Mỹ Sơn,5844,val_queries
+sample_005914,Thánh Địa Mỹ Sơn,5914,val_queries
+sample_005793,Thánh Địa Mỹ Sơn,5793,val_queries
+sample_005835,Thánh Địa Mỹ Sơn,5835,val_queries
+sample_005839,Thánh Địa Mỹ Sơn,5839,val_queries
+sample_006157,Tượng Chúa Kitô,6157,val_queries
+sample_006137,Tượng Chúa Kitô,6137,val_queries
+sample_006083,Tượng Chúa Kitô,6083,val_queries
+sample_006020,Tượng Chúa Kitô,6020,val_queries
+sample_006026,Tượng Chúa Kitô,6026,val_queries
+sample_006108,Tượng Chúa Kitô,6108,val_queries
+sample_006027,Tượng Chúa Kitô,6027,val_queries
+sample_006035,Tượng Chúa Kitô,6035,val_queries
+sample_006097,Tượng Chúa Kitô,6097,val_queries
+sample_006096,Tượng Chúa Kitô,6096,val_queries
+sample_006134,Tượng Chúa Kitô,6134,val_queries
+sample_006068,Tượng Chúa Kitô,6068,val_queries
+sample_006075,Tượng Chúa Kitô,6075,val_queries
+sample_006171,Tượng Chúa Kitô,6171,val_queries
+sample_006039,Tượng Chúa Kitô,6039,val_queries
+sample_006044,Tượng Chúa Kitô,6044,val_queries
+sample_006133,Tượng Chúa Kitô,6133,val_queries
+sample_006293,Văn Miếu - Quốc Tử Giám,6293,val_queries
+sample_006189,Văn Miếu - Quốc Tử Giám,6189,val_queries
+sample_006281,Văn Miếu - Quốc Tử Giám,6281,val_queries
+sample_006198,Văn Miếu - Quốc Tử Giám,6198,val_queries
+sample_006277,Văn Miếu - Quốc Tử Giám,6277,val_queries
+sample_006330,Văn Miếu - Quốc Tử Giám,6330,val_queries
+sample_006305,Văn Miếu - Quốc Tử Giám,6305,val_queries
+sample_006245,Văn Miếu - Quốc Tử Giám,6245,val_queries
+sample_006269,Văn Miếu - Quốc Tử Giám,6269,val_queries
+sample_006196,Văn Miếu - Quốc Tử Giám,6196,val_queries
+sample_006292,Văn Miếu - Quốc Tử Giám,6292,val_queries
+sample_006176,Văn Miếu - Quốc Tử Giám,6176,val_queries
+sample_006256,Văn Miếu - Quốc Tử Giám,6256,val_queries
+sample_006286,Văn Miếu - Quốc Tử Giám,6286,val_queries
+sample_006223,Văn Miếu - Quốc Tử Giám,6223,val_queries
+sample_006300,Văn Miếu - Quốc Tử Giám,6300,val_queries
+sample_006242,Văn Miếu - Quốc Tử Giám,6242,val_queries
+sample_006586,Vườn Quốc Gia Cúc Phương,6586,val_queries
+sample_006552,Vườn Quốc Gia Cúc Phương,6552,val_queries
+sample_006522,Vườn Quốc Gia Cúc Phương,6522,val_queries
+sample_006622,Vườn Quốc Gia Cúc Phương,6622,val_queries
+sample_006600,Vườn Quốc Gia Cúc Phương,6600,val_queries
+sample_006613,Vườn Quốc Gia Cúc Phương,6613,val_queries
+sample_006549,Vườn Quốc Gia Cúc Phương,6549,val_queries
+sample_006681,Vườn Quốc Gia Cúc Phương,6681,val_queries
+sample_006538,Vườn Quốc Gia Cúc Phương,6538,val_queries
+sample_006527,Vườn Quốc Gia Cúc Phương,6527,val_queries
+sample_006580,Vườn Quốc Gia Cúc Phương,6580,val_queries
+sample_006554,Vườn Quốc Gia Cúc Phương,6554,val_queries
+sample_006647,Vườn Quốc Gia Cúc Phương,6647,val_queries
+sample_006597,Vườn Quốc Gia Cúc Phương,6597,val_queries
+sample_006659,Vườn Quốc Gia Cúc Phương,6659,val_queries
+sample_006533,Vườn Quốc Gia Cúc Phương,6533,val_queries
+sample_006425,Vịnh Hạ Long,6425,val_queries
+sample_006359,Vịnh Hạ Long,6359,val_queries
+sample_006456,Vịnh Hạ Long,6456,val_queries
+sample_006373,Vịnh Hạ Long,6373,val_queries
+sample_006495,Vịnh Hạ Long,6495,val_queries
+sample_006458,Vịnh Hạ Long,6458,val_queries
+sample_006365,Vịnh Hạ Long,6365,val_queries
+sample_006453,Vịnh Hạ Long,6453,val_queries
+sample_006357,Vịnh Hạ Long,6357,val_queries
+sample_006345,Vịnh Hạ Long,6345,val_queries
+sample_006438,Vịnh Hạ Long,6438,val_queries
+sample_006429,Vịnh Hạ Long,6429,val_queries
+sample_006435,Vịnh Hạ Long,6435,val_queries
+sample_006467,Vịnh Hạ Long,6467,val_queries
+sample_006355,Vịnh Hạ Long,6355,val_queries
+sample_006406,Vịnh Hạ Long,6406,val_queries
+sample_006412,Vịnh Hạ Long,6412,val_queries
+sample_006430,Vịnh Hạ Long,6430,val_queries
+sample_002160,Đèo Hải Vân,2160,val_queries
+sample_002153,Đèo Hải Vân,2153,val_queries
+sample_002202,Đèo Hải Vân,2202,val_queries
+sample_002200,Đèo Hải Vân,2200,val_queries
+sample_002130,Đèo Hải Vân,2130,val_queries
+sample_002155,Đèo Hải Vân,2155,val_queries
+sample_002249,Đèo Hải Vân,2249,val_queries
+sample_002204,Đèo Hải Vân,2204,val_queries
+sample_002180,Đèo Hải Vân,2180,val_queries
+sample_002248,Đèo Hải Vân,2248,val_queries
+sample_002124,Đèo Hải Vân,2124,val_queries
+sample_002133,Đèo Hải Vân,2133,val_queries
+sample_002210,Đèo Hải Vân,2210,val_queries
+sample_002150,Đèo Hải Vân,2150,val_queries
+sample_001508,Đại Nội Huế,1508,val_queries
+sample_001619,Đại Nội Huế,1619,val_queries
+sample_001584,Đại Nội Huế,1584,val_queries
+sample_001598,Đại Nội Huế,1598,val_queries
+sample_001597,Đại Nội Huế,1597,val_queries
+sample_001532,Đại Nội Huế,1532,val_queries
+sample_001596,Đại Nội Huế,1596,val_queries
+sample_001564,Đại Nội Huế,1564,val_queries
+sample_001571,Đại Nội Huế,1571,val_queries
+sample_001628,Đại Nội Huế,1628,val_queries
+sample_001470,Đại Nội Huế,1470,val_queries
+sample_001559,Đại Nội Huế,1559,val_queries
+sample_001527,Đại Nội Huế,1527,val_queries
+sample_001605,Đại Nội Huế,1605,val_queries
+sample_001577,Đại Nội Huế,1577,val_queries
+sample_001600,Đại Nội Huế,1600,val_queries
+sample_001464,Đại Nội Huế,1464,val_queries
+sample_001458,Đại Nội Huế,1458,val_queries
+sample_001809,Đảo Cù Lao Chàm,1809,val_queries
+sample_001633,Đảo Cù Lao Chàm,1633,val_queries
+sample_001699,Đảo Cù Lao Chàm,1699,val_queries
+sample_001807,Đảo Cù Lao Chàm,1807,val_queries
+sample_001666,Đảo Cù Lao Chàm,1666,val_queries
+sample_001801,Đảo Cù Lao Chàm,1801,val_queries
+sample_001737,Đảo Cù Lao Chàm,1737,val_queries
+sample_001634,Đảo Cù Lao Chàm,1634,val_queries
+sample_001790,Đảo Cù Lao Chàm,1790,val_queries
+sample_001703,Đảo Cù Lao Chàm,1703,val_queries
+sample_001759,Đảo Cù Lao Chàm,1759,val_queries
+sample_001650,Đảo Cù Lao Chàm,1650,val_queries
+sample_001753,Đảo Cù Lao Chàm,1753,val_queries
+sample_001658,Đảo Cù Lao Chàm,1658,val_queries
+sample_001747,Đảo Cù Lao Chàm,1747,val_queries
+sample_001724,Đảo Cù Lao Chàm,1724,val_queries
+sample_001769,Đảo Cù Lao Chàm,1769,val_queries
+sample_001767,Đảo Cù Lao Chàm,1767,val_queries
+sample_001833,Đảo Lý Sơn,1833,val_queries
+sample_001825,Đảo Lý Sơn,1825,val_queries
+sample_001866,Đảo Lý Sơn,1866,val_queries
+sample_001839,Đảo Lý Sơn,1839,val_queries
+sample_001884,Đảo Lý Sơn,1884,val_queries
+sample_001943,Đảo Lý Sơn,1943,val_queries
+sample_001921,Đảo Lý Sơn,1921,val_queries
+sample_001842,Đảo Lý Sơn,1842,val_queries
+sample_001939,Đảo Lý Sơn,1939,val_queries
+sample_001902,Đảo Lý Sơn,1902,val_queries
+sample_001816,Đảo Lý Sơn,1816,val_queries
+sample_001899,Đảo Lý Sơn,1899,val_queries
+sample_001861,Đảo Lý Sơn,1861,val_queries
+sample_001926,Đảo Lý Sơn,1926,val_queries
+sample_001868,Đảo Lý Sơn,1868,val_queries
+sample_002043,Đền Hùng,2043,val_queries
+sample_001962,Đền Hùng,1962,val_queries
+sample_001988,Đền Hùng,1988,val_queries
+sample_002076,Đền Hùng,2076,val_queries
+sample_001984,Đền Hùng,1984,val_queries
+sample_002020,Đền Hùng,2020,val_queries
+sample_002113,Đền Hùng,2113,val_queries
+sample_002107,Đền Hùng,2107,val_queries
+sample_001993,Đền Hùng,1993,val_queries
+sample_002067,Đền Hùng,2067,val_queries
+sample_001973,Đền Hùng,1973,val_queries
+sample_001977,Đền Hùng,1977,val_queries
+sample_002037,Đền Hùng,2037,val_queries
+sample_001995,Đền Hùng,1995,val_queries
+sample_001997,Đền Hùng,1997,val_queries
+sample_002022,Đền Hùng,2022,val_queries
+sample_002615,Đỉnh Phanxipăng,2615,val_queries
+sample_002633,Đỉnh Phanxipăng,2633,val_queries
+sample_002559,Đỉnh Phanxipăng,2559,val_queries
+sample_002657,Đỉnh Phanxipăng,2657,val_queries
+sample_002686,Đỉnh Phanxipăng,2686,val_queries
+sample_002604,Đỉnh Phanxipăng,2604,val_queries
+sample_002649,Đỉnh Phanxipăng,2649,val_queries
+sample_002625,Đỉnh Phanxipăng,2625,val_queries
+sample_002691,Đỉnh Phanxipăng,2691,val_queries
+sample_002663,Đỉnh Phanxipăng,2663,val_queries
+sample_002725,Đỉnh Phanxipăng,2725,val_queries
+sample_002611,Đỉnh Phanxipăng,2611,val_queries
+sample_002595,Đỉnh Phanxipăng,2595,val_queries
+sample_002744,Đỉnh Phanxipăng,2744,val_queries
+sample_002557,Đỉnh Phanxipăng,2557,val_queries
+sample_002646,Đỉnh Phanxipăng,2646,val_queries
+sample_002558,Đỉnh Phanxipăng,2558,val_queries
+sample_002566,Đỉnh Phanxipăng,2566,val_queries
+sample_002700,Đỉnh Phanxipăng,2700,val_queries
+sample_002352,Địa Đạo Củ Chi,2352,val_queries
+sample_002379,Địa Đạo Củ Chi,2379,val_queries
+sample_002381,Địa Đạo Củ Chi,2381,val_queries
+sample_002382,Địa Đạo Củ Chi,2382,val_queries
+sample_002283,Địa Đạo Củ Chi,2283,val_queries
+sample_002386,Địa Đạo Củ Chi,2386,val_queries
+sample_002350,Địa Đạo Củ Chi,2350,val_queries
+sample_002389,Địa Đạo Củ Chi,2389,val_queries
+sample_002276,Địa Đạo Củ Chi,2276,val_queries
+sample_002310,Địa Đạo Củ Chi,2310,val_queries
+sample_002405,Địa Đạo Củ Chi,2405,val_queries
+sample_002297,Địa Đạo Củ Chi,2297,val_queries
+sample_002328,Địa Đạo Củ Chi,2328,val_queries
+sample_002281,Địa Đạo Củ Chi,2281,val_queries
+sample_002323,Địa Đạo Củ Chi,2323,val_queries
+sample_002934,Đồi Cát Bay Mũi Né,2934,val_queries
+sample_002943,Đồi Cát Bay Mũi Né,2943,val_queries
+sample_002931,Đồi Cát Bay Mũi Né,2931,val_queries
+sample_002896,Đồi Cát Bay Mũi Né,2896,val_queries
+sample_002843,Đồi Cát Bay Mũi Né,2843,val_queries
+sample_002761,Đồi Cát Bay Mũi Né,2761,val_queries
+sample_002939,Đồi Cát Bay Mũi Né,2939,val_queries
+sample_002947,Đồi Cát Bay Mũi Né,2947,val_queries
+sample_002861,Đồi Cát Bay Mũi Né,2861,val_queries
+sample_002923,Đồi Cát Bay Mũi Né,2923,val_queries
+sample_002763,Đồi Cát Bay Mũi Né,2763,val_queries
+sample_002808,Đồi Cát Bay Mũi Né,2808,val_queries
+sample_002790,Đồi Cát Bay Mũi Né,2790,val_queries
+sample_002866,Đồi Cát Bay Mũi Né,2866,val_queries
+sample_002850,Đồi Cát Bay Mũi Né,2850,val_queries
+sample_002856,Đồi Cát Bay Mũi Né,2856,val_queries
+sample_002795,Đồi Cát Bay Mũi Né,2795,val_queries
+sample_002780,Đồi Cát Bay Mũi Né,2780,val_queries
+sample_002871,Đồi Cát Bay Mũi Né,2871,val_queries
+sample_002930,Đồi Cát Bay Mũi Né,2930,val_queries

@@ -1,0 +1,74 @@
+{
+  "T1": 0.05,
+  "T2": 0.65,
+  "backbone": "facebook/dinov2-with-registers-large",
+  "batch_size": 16,
+  "checkpoint": "pretrained-zero-shot",
+  "configuration": {
+    "dataset": {
+      "cache_dir": "artifacts/cache/huggingface/datasets",
+      "identifier": "PhamPhien/VN_Attractions",
+      "source_split": "train"
+    },
+    "evaluation": {
+      "k_values": [
+        1,
+        5,
+        10
+      ]
+    },
+    "inference": {
+      "resolution": 224
+    },
+    "model": {
+      "backbone": "facebook/dinov2-with-registers-large",
+      "cache_dir": "artifacts/cache/huggingface/models",
+      "cosface_margin": 0.4,
+      "cosface_scale": 30.0,
+      "fine_tune_last_n_layers": 5,
+      "global_dim": 1024,
+      "with_registers": true
+    },
+    "reranking": {
+      "T1": 0.05,
+      "T2": 0.65,
+      "enabled": true,
+      "facet": "V",
+      "layer": "n-1",
+      "top_k": 5,
+      "zero_shot_layer": "n-2"
+    },
+    "retrieval": {
+      "backend": "faiss",
+      "index_type": "IndexFlatIP",
+      "normalize": true
+    },
+    "training": {
+      "backbone_lr": "1e-5",
+      "batch_size": 16,
+      "classifier_lr": "1e-5",
+      "epochs": 25,
+      "gradient_accumulation_steps": 1,
+      "mixed_precision": false,
+      "training_resolution": 224,
+      "weight_decay": 0.01,
+      "workers": 0
+    }
+  },
+  "cuda_version": null,
+  "dataset": "PhamPhien/VN_Attractions",
+  "dataset_revision": null,
+  "device": "cpu",
+  "facet": "V",
+  "git_commit": null,
+  "global_dimension": 1024,
+  "gpu": null,
+  "input_resolution": 224,
+  "local_feature_layer": "n-1",
+  "python_version": "3.12.2",
+  "pytorch_version": "2.14.1+cpu",
+  "rerank_k": 5,
+  "seed": 42,
+  "timestamp_utc": "2026-10-02T17:13:33.618103+00:00",
+  "training_resolution": 224
+}

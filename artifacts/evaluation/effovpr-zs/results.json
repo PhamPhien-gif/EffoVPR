@@ -1,0 +1,58 @@
+{
+  "status": "LIMITED EXPERIMENT",
+  "sample_limit": 4,
+  "evaluation_protocol": "VN_Attractions Label-Based Retrieval",
+  "mode": "effovpr-zs",
+  "resolution": 224,
+  "reranking": {
+    "top_k": 5,
+    "layer": "n-2",
+    "facet": "V",
+    "T1": 0.05,
+    "T2": 0.65
+  },
+  "query_split": "test_queries",
+  "gallery_count": 4,
+  "query_count": 4,
+  "metrics": {
+    "Recall@1": 1.0,
+    "macro_Recall@1": 1.0,
+    "per_class_Recall@1": {
+      "Bà Nà Hills - Cầu Vàng": 1.0
+    },
+    "Recall@5": 1.0,
+    "macro_Recall@5": 1.0,
+    "per_class_Recall@5": {
+      "Bà Nà Hills - Cầu Vàng": 1.0
+    },
+    "Recall@10": 1.0,
+    "macro_Recall@10": 1.0,
+    "per_class_Recall@10": {
+      "Bà Nà Hills - Cầu Vàng": 1.0
+    },
+    "MRR": 1.0
+  },
+  "global_metrics": {
+    "Recall@1": 1.0,
+    "macro_Recall@1": 1.0,
+    "per_class_Recall@1": {
+      "Bà Nà Hills - Cầu Vàng": 1.0
+    },
+    "Recall@5": 1.0,
+    "macro_Recall@5": 1.0,
+    "per_class_Recall@5": {
+      "Bà Nà Hills - Cầu Vàng": 1.0
+    },
+    "Recall@10": 1.0,
+    "macro_Recall@10": 1.0,
+    "per_class_Recall@10": {
+      "Bà Nà Hills - Cầu Vàng": 1.0
+    },
+    "MRR": 1.0
+  },
+  "global_feature_dimension": 1024,
+  "retrieval_index": "features cache (in-memory FAISS)",
+  "gallery_feature_storage_bytes": 16384,
+  "global_extraction_and_search_seconds": 0.07368750000023283,
+  "reranking_seconds": 23.64346829999704
+}

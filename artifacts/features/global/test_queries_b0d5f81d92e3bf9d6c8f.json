@@ -1,0 +1,16 @@
+{
+  "T1": 0.05,
+  "T2": 0.65,
+  "checkpoint": "pretrained-zero-shot",
+  "checkpoint_mtime_ns": null,
+  "checkpoint_size": null,
+  "facet": "V",
+  "feature_dimension": 1024,
+  "input_resolution": 224,
+  "local_feature_layer": "n-2",
+  "model_identifier": "facebook/dinov2-with-registers-large",
+  "model_revision": null,
+  "record_ids_sha256": "70e88f33fdd8d713693c09a4c45eceb12e56b51a525c6e19e8e01443bdfb0a0c",
+  "split": "test_queries",
+  "zero_shot": true
+}
