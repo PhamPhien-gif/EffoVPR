@@ -73,7 +73,7 @@ def main() -> None:
     rerank = args.mode in {"effovpr-zs", "effovpr-r"}
     if not zero_shot and not args.checkpoint:
         raise ValueError(f"{args.mode} requires --checkpoint")
-    if args.checkpoint and not Path(args.checkpoint).is_file():
+    if args.checkpoint and not Path(args.checkpoint).exists():
         raise FileNotFoundError(f"Checkpoint does not exist: {args.checkpoint}")
 
     dataset = get_dataset(config)

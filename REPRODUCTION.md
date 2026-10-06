@@ -23,7 +23,7 @@ The split proportions are 70% train, 10% gallery, 10% validation queries, and 10
 
 ## Training and checkpoints
 
-Training uses AdamW, CosFace, the last five transformer blocks, and configurable 1024/256/128-dimensional projection. After each epoch, validation queries retrieve against the gallery; the checkpoint with the best validation Recall@1 is saved as `artifacts/checkpoints/best.pt`. The last epoch is saved as `last.pt`, and training history, class mapping, dataset audit, and run metadata are recorded in `artifacts/`.
+Training uses AdamW, CosFace, the last five transformer blocks, and configurable 1024/256/128-dimensional projection. Epochs do not run validation inference, gallery feature extraction, FAISS retrieval, or local reranking. The full `artifacts/checkpoints/best.pth` is selected by minimum mean training loss, while `last.pth` remains resumable; training history, class mapping, dataset audit, and run metadata are recorded in `artifacts/`. After training, the full best state is exported and verified under `artifacts/model/` as separate `config.json`, `model.safetensors`, and `README.md` files. Final evaluation remains an explicit post-training step.
 
 No checkpoint or training result is included unless it was produced by an actual run. CPU training of the full ViT-L model is expected to be resource-intensive; use a smaller `--epochs` run only as a limited experiment, not a complete result.
 

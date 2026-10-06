@@ -22,7 +22,7 @@ from scripts.common import (
 def main() -> None:
     parser = argparse.ArgumentParser(description="Build a FAISS index over the gallery split.")
     parser.add_argument("--config", default="configs/effovpr_vn_attractions.yaml")
-    parser.add_argument("--checkpoint", default="artifacts/checkpoints/best.pt")
+    parser.add_argument("--checkpoint", default="artifacts/model")
     parser.add_argument("--batch-size", type=int)
     args = parser.parse_args()
 
@@ -33,7 +33,7 @@ def main() -> None:
     gallery = records_for_split(dataset, splits["gallery"])
     if not gallery:
         raise ValueError("Gallery split is empty")
-    checkpoint_path = args.checkpoint if Path(args.checkpoint).is_file() else None
+    checkpoint_path = args.checkpoint if Path(args.checkpoint).exists() else None
     if checkpoint_path is None:
         raise FileNotFoundError(f"Checkpoint does not exist: {args.checkpoint}")
     model = build_model(config, checkpoint_path=checkpoint_path)

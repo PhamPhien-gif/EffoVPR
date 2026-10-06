@@ -1,0 +1,20 @@
+{
+  "global_shape": [
+    1,
+    128
+  ],
+  "max_absolute_difference": 0.0,
+  "cosine_similarity": 1.0,
+  "local_patch_shape": [
+    1,
+    4,
+    32
+  ],
+  "selected_local_count": 4,
+  "local_max_absolute_difference": 0.0,
+  "strict_load": true,
+  "mnn_matches_equal": true,
+  "fixture_only": true,
+  "notebook_top10_verified": true,
+  "query_image": "D:\\Github\\EffoVPR\\artifacts\\verification_fixture\\query.png"
+}

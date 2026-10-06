@@ -11,13 +11,11 @@ from tqdm import tqdm
 
 from src.effovpr.data.dataset import build_label_mapping
 from src.effovpr.data.audit import compute_dataset_audit, save_dataset_audit
-from src.effovpr.evaluation.evaluator import evaluate_label_retrieval
-from src.effovpr.retrieval.index import build_faiss_index, search_faiss
 from src.effovpr.utils.checkpoint import load_checkpoint, save_checkpoint
+from src.effovpr.utils.model_artifact import export_best_model
 from src.effovpr.utils.device import get_device
 from scripts.common import (
     build_model,
-    extract_global_features,
     get_dataset,
     get_splits,
     image_batch,
@@ -26,19 +24,6 @@ from scripts.common import (
     set_deterministic_seed,
     write_run_metadata,
 )
-
-
-def validate(model, gallery_records, query_records, resolution, batch_size):
-    gallery = extract_global_features(model, gallery_records, resolution, batch_size)
-    queries = extract_global_features(model, query_records, resolution, batch_size)
-    index = build_faiss_index(gallery)
-    _, indices = search_faiss(index, queries, top_k=min(10, len(gallery_records)))
-    ranked_labels = [[gallery_records[index]["label"] for index in row if index >= 0] for row in indices]
-    metrics = evaluate_label_retrieval(
-        [record["label"] for record in query_records],
-        ranked_labels,
-    )
-    return metrics
 
 
 def main() -> None:
@@ -69,10 +54,8 @@ def main() -> None:
     splits = get_splits(dataset, "artifacts/splits", seed=args.seed)
     label_mapping = build_label_mapping(dataset)
     train_records = records_for_split(dataset, splits["train"])
-    gallery_records = records_for_split(dataset, splits["gallery"])
-    validation_records = records_for_split(dataset, splits["val_queries"])
-    if not train_records or not gallery_records or not validation_records:
-        raise ValueError("Training requires non-empty train, gallery, and validation-query splits")
+    if not train_records:
+        raise ValueError("Training requires a non-empty training split")
 
     model = build_model(config, class_count=len(label_mapping))
     device = get_device()
@@ -97,7 +80,7 @@ def main() -> None:
     scheduler = CosineAnnealingLR(optimizer, T_max=epochs)
     resolution = int(training["training_resolution"])
     history = []
-    best_metric = -1.0
+    best_training_loss = float("inf")
     start_epoch = 1
     resume_batch = 0
     resume_order = None
@@ -144,7 +127,7 @@ def main() -> None:
         optimizer.load_state_dict(resume_checkpoint["optimizer_state_dict"])
         scheduler.load_state_dict(resume_checkpoint["scheduler_state_dict"])
         history = resume_checkpoint.get("history", [])
-        best_metric = float(resume_checkpoint.get("best_metric", -1.0))
+        best_training_loss = float(resume_checkpoint.get("best_training_loss", float("inf")))
         start_epoch = int(resume_checkpoint["epoch"])
         resume_batch = int(resume_checkpoint.get("next_batch", 0))
         resume_order = resume_checkpoint.get("epoch_order")
@@ -169,7 +152,7 @@ def main() -> None:
         next_batch: int,
         epoch_order: list[int] | None,
         epoch_losses: list[float],
-        metric: float,
+        best_loss: float,
         include_frozen_backbone: bool,
     ) -> dict:
         state = {
@@ -180,7 +163,7 @@ def main() -> None:
             "epoch_order": torch.tensor(epoch_order, dtype=torch.long) if epoch_order is not None else None,
             "epoch_losses": epoch_losses,
             "global_step": global_step,
-            "best_metric": metric,
+            "best_training_loss": best_loss,
             "configuration": config,
             "class_mapping": label_mapping,
             "random_seed": args.seed,
@@ -227,48 +210,34 @@ def main() -> None:
             progress.set_postfix(loss=f"{losses[-1]:.4f}")
             if global_step % args.checkpoint_every_steps == 0:
                 save_checkpoint(
-                    str(checkpoint_dir / "last.pt"),
-                    checkpoint_state(epoch, batch_number + 1, order, losses, best_metric, False),
+                    str(checkpoint_dir / "last.pth"),
+                    checkpoint_state(epoch, batch_number + 1, order, losses, best_training_loss, False),
                 )
         scheduler.step()
-        model.eval()
-        validation_metrics = validate(
-            model,
-            gallery_records,
-            validation_records,
-            int(config["inference"]["resolution"]),
-            batch_size,
-        )
         epoch_loss = sum(losses) / len(losses) if losses else float("nan")
         entry = {
             "epoch": epoch,
             "training_loss": epoch_loss,
-            "validation": validation_metrics,
             "learning_rates": [group["lr"] for group in optimizer.param_groups],
         }
         history.append(entry)
         next_epoch = epoch + 1
-        checkpoint = checkpoint_state(
-            next_epoch,
-            0,
-            None,
-            [],
-            max(best_metric, validation_metrics["Recall@1"]),
-            True,
-        )
         latest_checkpoint = checkpoint_state(
             next_epoch,
             0,
             None,
             [],
-            max(best_metric, validation_metrics["Recall@1"]),
+            best_training_loss,
             False,
         )
-        save_checkpoint(str(checkpoint_dir / "last.pt"), latest_checkpoint)
-        if validation_metrics["Recall@1"] > best_metric:
-            best_metric = validation_metrics["Recall@1"]
-            checkpoint["best_metric"] = best_metric
-            save_checkpoint(str(checkpoint_dir / "best.pt"), checkpoint)
+        if epoch_loss < best_training_loss:
+            best_training_loss = epoch_loss
+            checkpoint = checkpoint_state(
+                next_epoch, 0, None, [], best_training_loss, True
+            )
+            save_checkpoint(str(checkpoint_dir / "best.pth"), checkpoint)
+        latest_checkpoint["best_training_loss"] = best_training_loss
+        save_checkpoint(str(checkpoint_dir / "last.pth"), latest_checkpoint)
         print(json.dumps(entry, ensure_ascii=False))
         (Path("artifacts") / "training_history.json").write_text(
             json.dumps(history, indent=2, ensure_ascii=False),
@@ -277,7 +246,15 @@ def main() -> None:
         resume_batch = 0
         resume_order = None
         resume_losses = []
-    print(f"Training complete; best validation Recall@1={best_metric:.6f}")
+    best_checkpoint = checkpoint_dir / "best.pth"
+    if not best_checkpoint.is_file():
+        raise FileNotFoundError(
+            f"No best checkpoint is available at {best_checkpoint}. "
+            "Train at least one epoch before exporting the model."
+        )
+    verification_image = dataset[int(splits["val_queries"].iloc[0]["dataset_index"])]["image"]
+    export_best_model(model, best_checkpoint, "artifacts/model", config, verification_image)
+    print(f"Training complete; best training loss={best_training_loss:.6f}")
 
 
 if __name__ == "__main__":

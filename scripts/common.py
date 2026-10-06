@@ -123,6 +123,10 @@ def records_for_split(dataset, frame: pd.DataFrame) -> list[dict[str, Any]]:
 
 
 def build_model(config: dict[str, Any], class_count: int | None = None, checkpoint_path: str | None = None, zero_shot: bool = False) -> EffoVPR:
+    if checkpoint_path and Path(checkpoint_path).is_dir():
+        from src.effovpr.utils.model_artifact import load_model_artifact
+        model, _ = load_model_artifact(checkpoint_path, get_device())
+        return model
     model_config = config["model"]
     model = EffoVPR(
         backbone_name=model_config["backbone"],
@@ -200,6 +204,8 @@ def load_or_extract_global_features(
     zero_shot: bool = False,
 ) -> np.ndarray:
     checkpoint = Path(checkpoint_path).resolve() if checkpoint_path else None
+    if checkpoint and checkpoint.is_dir():
+        checkpoint = checkpoint / "model.safetensors"
     checkpoint_stat = checkpoint.stat() if checkpoint and checkpoint.is_file() else None
     metadata = {
         "checkpoint": str(checkpoint) if checkpoint else "pretrained-zero-shot",

@@ -25,7 +25,7 @@ def safe_name(value: str) -> str:
 def main() -> None:
     parser = argparse.ArgumentParser(description="Visualize retrieval results and optional EffoVPR local matches.")
     parser.add_argument("--config", default="configs/effovpr_vn_attractions.yaml")
-    parser.add_argument("--checkpoint", default="artifacts/checkpoints/best.pt")
+    parser.add_argument("--checkpoint", default="artifacts/model")
     parser.add_argument("--mode", choices=("dino-zs", "effovpr-zs", "effovpr-g", "effovpr-r"), default="effovpr-r")
     parser.add_argument("--results", default="")
     parser.add_argument("--limit", type=int, default=10)
@@ -36,7 +36,7 @@ def main() -> None:
     zero_shot = args.mode in {"dino-zs", "effovpr-zs"}
     local_reranking = args.mode in {"effovpr-zs", "effovpr-r"}
     checkpoint = None if zero_shot else args.checkpoint
-    if checkpoint and not Path(checkpoint).is_file():
+    if checkpoint and not Path(checkpoint).exists():
         raise FileNotFoundError(f"Checkpoint does not exist: {checkpoint}")
     results_path = Path(args.results) if args.results else Path("artifacts/evaluation") / args.mode / "query_predictions.csv"
     if not results_path.is_file():
