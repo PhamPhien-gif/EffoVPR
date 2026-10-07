@@ -1,0 +1,9 @@
+{
+  "checkpoint_identifier": "/kaggle/working/EffoVPR_R/artifacts/model",
+  "count": 804,
+  "feature_dimension": 1024,
+  "index_type": "IndexFlatIP",
+  "input_resolution": 504,
+  "model_identifier": "facebook/dinov2-with-registers-large",
+  "normalized": true
+}

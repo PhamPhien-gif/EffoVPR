@@ -1,0 +1,175 @@
+{
+  "format_version": 1,
+  "architecture": "EffoVPR",
+  "model": {
+    "backbone_name": "facebook/dinov2-with-registers-large",
+    "global_dim": 1024,
+    "num_classes": 49,
+    "fine_tune_last_n_layers": 5,
+    "with_registers": true,
+    "cosface_scale": 30.0,
+    "cosface_margin": 0.4
+  },
+  "backbone_config": {
+    "transformers_version": "5.18.0",
+    "architectures": [
+      "Dinov2WithRegistersModel"
+    ],
+    "output_hidden_states": false,
+    "return_dict": true,
+    "dtype": "float32",
+    "chunk_size_feed_forward": 0,
+    "is_encoder_decoder": false,
+    "id2label": {
+      "0": "LABEL_0",
+      "1": "LABEL_1"
+    },
+    "label2id": {
+      "LABEL_0": 0,
+      "LABEL_1": 1
+    },
+    "problem_type": null,
+    "hidden_size": 1024,
+    "num_hidden_layers": 24,
+    "num_attention_heads": 16,
+    "mlp_ratio": 4,
+    "hidden_act": "gelu",
+    "hidden_dropout_prob": 0.0,
+    "attention_probs_dropout_prob": 0.0,
+    "initializer_range": 0.02,
+    "layer_norm_eps": 1e-06,
+    "image_size": 518,
+    "patch_size": 14,
+    "num_channels": 3,
+    "qkv_bias": true,
+    "layerscale_value": 1.0,
+    "drop_path_rate": 0.0,
+    "use_swiglu_ffn": false,
+    "num_register_tokens": 4,
+    "apply_layernorm": true,
+    "reshape_hidden_states": true,
+    "stage_names": [
+      "stem",
+      "stage1",
+      "stage2",
+      "stage3",
+      "stage4",
+      "stage5",
+      "stage6",
+      "stage7",
+      "stage8",
+      "stage9",
+      "stage10",
+      "stage11",
+      "stage12"
+    ],
+    "_name_or_path": "facebook/dinov2-with-registers-large",
+    "interpolate_antialias": true,
+    "interpolate_offset": 0.0,
+    "model_type": "dinov2_with_registers",
+    "output_attentions": false,
+    "out_features": [
+      "stage12"
+    ],
+    "out_indices": [
+      12
+    ]
+  },
+  "processor_config": {
+    "crop_size": {
+      "height": 224,
+      "width": 224
+    },
+    "do_center_crop": true,
+    "do_convert_rgb": true,
+    "do_normalize": true,
+    "do_rescale": true,
+    "do_resize": true,
+    "image_mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "image_processor_type": "BitImageProcessor",
+    "image_std": [
+      0.229,
+      0.224,
+      0.225
+    ],
+    "resample": 3,
+    "rescale_factor": 0.00392156862745098,
+    "size": {
+      "shortest_edge": 256
+    }
+  },
+  "hidden_dim": 1024,
+  "patch_size": 14,
+  "inference": {
+    "resolution": 504
+  },
+  "reranking": {
+    "enabled": true,
+    "top_k": 100,
+    "layer": "n-1",
+    "zero_shot_layer": "n-2",
+    "facet": "V",
+    "T1": 0.05,
+    "T2": 0.65
+  },
+  "class_mapping": {
+    "B\u00e0 N\u00e0 Hills - C\u1ea7u V\u00e0ng": 0,
+    "B\u01b0u \u0110i\u1ec7n S\u00e0i G\u00f2n": 1,
+    "B\u1ebfn Nh\u00e0 R\u1ed3ng": 2,
+    "B\u1ebfn Ninh Ki\u1ec1u": 3,
+    "Ch\u00f9a B\u00e1i \u0110\u00ednh": 4,
+    "Ch\u00f9a C\u1ea7u H\u1ed9i An": 5,
+    "Ch\u00f9a H\u01b0\u01a1ng": 6,
+    "Ch\u00f9a M\u1ed9t C\u1ed9t": 7,
+    "Ch\u1ee3 B\u1ebfn Th\u00e0nh": 8,
+    "Ch\u1ee3 N\u1ed5i C\u00e1i R\u0103ng": 9,
+    "C\u1ea7u Long Bi\u00ean": 10,
+    "C\u1ed9t C\u1edd L\u0169ng C\u00fa": 11,
+    "Dinh \u0110\u1ed9c L\u1eadp": 12,
+    "Eo Gi\u00f3 Quy Nh\u01a1n": 13,
+    "Gh\u1ec1nh \u0110\u00e1 \u0110\u0129a": 14,
+    "Hang S\u01a1n \u0110o\u00f2ng": 15,
+    "Ho\u00e0ng Th\u00e0nh Th\u0103ng Long": 16,
+    "H\u1ed3 Ba B\u1ec3": 17,
+    "H\u1ed3 G\u01b0\u01a1m": 18,
+    "Landmark 81": 19,
+    "L\u0103ng Ch\u1ee7 T\u1ecbch H\u1ed3 Ch\u00ed Minh": 20,
+    "L\u0103ng T\u1ef1 \u0110\u1ee9c": 21,
+    "M\u00f9 Cang Ch\u1ea3i": 22,
+    "Ng\u0169 H\u00e0nh S\u01a1n": 23,
+    "Nh\u00e0 H\u00e1t L\u1edbn H\u00e0 N\u1ed9i": 24,
+    "Nh\u00e0 Th\u1edd \u0110\u1ee9c B\u00e0": 25,
+    "Nh\u00e0 T\u00f9 H\u1ecfa L\u00f2": 26,
+    "N\u00fai B\u00e0 \u0110en": 27,
+    "Phong Nha - K\u1ebb B\u00e0ng": 28,
+    "Ph\u1ed1 C\u1ed5 H\u1ed9i An": 29,
+    "Qu\u1ea3ng Tr\u01b0\u1eddng L\u00e2m Vi\u00ean": 30,
+    "Qu\u1ea7n Th\u1ec3 Tr\u00e0ng An": 31,
+    "Tam C\u1ed1c - B\u00edch \u0110\u1ed9ng": 32,
+    "Thung L\u0169ng M\u01b0\u1eddng Hoa": 33,
+    "Th\u00e1c B\u1ea1c Sa Pa": 34,
+    "Th\u00e1c B\u1ea3n Gi\u1ed1c": 35,
+    "Th\u00e1nh \u0110\u1ecba M\u1ef9 S\u01a1n": 36,
+    "T\u01b0\u1ee3ng Ch\u00faa Kit\u00f4": 37,
+    "V\u0103n Mi\u1ebfu - Qu\u1ed1c T\u1eed Gi\u00e1m": 38,
+    "V\u01b0\u1eddn Qu\u1ed1c Gia C\u00fac Ph\u01b0\u01a1ng": 39,
+    "V\u1ecbnh H\u1ea1 Long": 40,
+    "\u0110\u00e8o H\u1ea3i V\u00e2n": 41,
+    "\u0110\u1ea1i N\u1ed9i Hu\u1ebf": 42,
+    "\u0110\u1ea3o C\u00f9 Lao Ch\u00e0m": 43,
+    "\u0110\u1ea3o L\u00fd S\u01a1n": 44,
+    "\u0110\u1ec1n H\u00f9ng": 45,
+    "\u0110\u1ec9nh Phanxip\u0103ng": 46,
+    "\u0110\u1ecba \u0110\u1ea1o C\u1ee7 Chi": 47,
+    "\u0110\u1ed3i C\u00e1t Bay M\u0169i N\u00e9": 48
+  },
+  "source": {
+    "checkpoint": "best.pth",
+    "best_metric": null
+  },
+  "transformers_version": "5.18.0"
+}
