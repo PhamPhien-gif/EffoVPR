@@ -1,9 +1,0 @@
-{
-  "mode": "dino-zs",
-  "dataset_samples": 6682,
-  "dataset_classes": 41,
-  "results": "/kaggle/working/DINOv2_Global_ZS/artifacts/evaluation/dino-zs/results.json",
-  "visualizations": "/kaggle/working/DINOv2_Global_ZS/artifacts/visualizations/dino-zs",
-  "generated_at_utc": "2026-10-03T10:40:51.163190+00:00",
-  "pretrained_reference": "/kaggle/working/DINOv2_Global_ZS/artifacts/checkpoints/pretrained_model_reference.json"
-}

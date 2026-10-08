@@ -1,9 +1,0 @@
-{
-  "mode": "effovpr-zs",
-  "dataset_samples": 6682,
-  "dataset_classes": 41,
-  "results": "/kaggle/working/EffoVPR_ZS/artifacts/evaluation/effovpr-zs/results.json",
-  "visualizations": "/kaggle/working/EffoVPR_ZS/artifacts/visualizations/effovpr-zs",
-  "generated_at_utc": "2026-10-03T20:35:37.436096+00:00",
-  "pretrained_reference": "/kaggle/working/EffoVPR_ZS/artifacts/checkpoints/pretrained_model_reference.json"
-}

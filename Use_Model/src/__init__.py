@@ -1,1 +1,0 @@
-"""EffoVPR package."""

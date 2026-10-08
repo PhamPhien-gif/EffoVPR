@@ -42,3 +42,7 @@ downloads/
 .idea/
 .DS_Store
 Thumbs.db
+# Local pipeline caches and generated experiment output
+artifacts/
+DINOv2_Global_ZS_outputs/
+EffoVPR_ZS_outputs/
