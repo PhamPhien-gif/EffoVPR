@@ -1,5 +1,8 @@
 from __future__ import annotations
 
+import base64
+import hashlib
+import io
 import json
 from pathlib import Path
 
@@ -9,6 +12,7 @@ import streamlit as st
 import torch
 import torch.nn.functional as F
 from PIL import Image
+from PIL import ImageDraw
 
 from src.effovpr.models.dino_attention import attention_patch_scores
 from src.effovpr.reranking.mnn import mutual_nearest_neighbor_matches
@@ -157,11 +161,39 @@ def rank_labels(similarities: np.ndarray, metadata: pd.DataFrame) -> list[dict]:
 
 
 @torch.inference_mode()
-def local_descriptors(model, image: Image.Image, resolution: int, rerank: dict) -> torch.Tensor:
+def local_descriptor_data(model, image: Image.Image, resolution: int, rerank: dict):
     qkv = model.extract_qkv(prepare_image(model, image, resolution), layer=rerank["layer"])
     scores = attention_patch_scores(qkv["q_patch"][0], qkv["k"][0, 0])
     selected = scores > float(rerank["T1"])
-    return qkv[f"{str(rerank['facet']).lower()}_patch"][0, selected].float()
+    descriptors = qkv[f"{str(rerank['facet']).lower()}_patch"][0, selected].float()
+    patch_ids = torch.where(selected)[0]
+    grid = resolution // model.backbone.patch_size
+    points = torch.stack(((patch_ids % grid + 0.5) / grid, (patch_ids // grid + 0.5) / grid), dim=1)
+    return descriptors, points
+
+
+def draw_mnn_matches(query_image: Image.Image, candidate_image: Image.Image, query_points, candidate_points, matches):
+    """Draw MNN patch-center correspondences over a side-by-side image pair."""
+    from PIL import Image as PILImage
+
+    width, height = 504, 504
+    q = query_image.convert("RGB").resize((width, height), PILImage.Resampling.BICUBIC)
+    c = candidate_image.convert("RGB").resize((width, height), PILImage.Resampling.BICUBIC)
+    canvas = PILImage.new("RGB", (2 * width, height), "white")
+    canvas.paste(q, (0, 0))
+    canvas.paste(c, (width, 0))
+    draw = ImageDraw.Draw(canvas)
+    palette = [(255, 48, 48), (0, 180, 255), (0, 210, 100), (255, 170, 0), (200, 60, 255), (255, 230, 0)]
+    qp = query_points.detach().cpu().tolist()
+    cp = candidate_points.detach().cpu().tolist()
+    for i, (qi, ci) in enumerate(matches.detach().cpu().tolist()):
+        color = palette[i % len(palette)]
+        x1, y1 = qp[qi][0] * width, qp[qi][1] * height
+        x2, y2 = width + cp[ci][0] * width, cp[ci][1] * height
+        draw.line((x1, y1, x2, y2), fill=color, width=2)
+        for x, y in ((x1, y1), (x2, y2)):
+            draw.ellipse((x - 4, y - 4, x + 4, y + 4), fill=color, outline="white", width=1)
+    return canvas
 
 
 def read_queries(mode: str, local_selection: list[str], uploads) -> list[tuple[str, Image.Image]]:
@@ -182,6 +214,12 @@ def read_queries(mode: str, local_selection: list[str], uploads) -> list[tuple[s
             except Exception as exc:
                 st.warning(f"Could not read {uploaded.name}: {exc}")
     return items
+
+
+class NamedBytesIO(io.BytesIO):
+    def __init__(self, name: str, data: bytes):
+        super().__init__(data)
+        self.name = name
 
 
 def gallery_matches_dataset(metadata: pd.DataFrame, dataset) -> bool:
@@ -221,11 +259,42 @@ with st.sidebar:
         else:
             st.info("No supported images found in Images/. Select Upload images instead.")
     else:
-        uploads = st.file_uploader(
+        uploaded_files = st.file_uploader(
             "Upload query images", type=["jpg", "jpeg", "png", "webp", "bmp", "tif", "tiff"],
             accept_multiple_files=True,
         )
-    use_mnn = st.checkbox("Rerank each Top 10 with local MNN", value=False)
+        from st_chat_input_multimodal import multimodal_chat_input
+
+        if "pasted_query_images" not in st.session_state:
+            st.session_state["pasted_query_images"] = {}
+        paste_result = multimodal_chat_input(
+            placeholder="Dán ảnh bằng Ctrl+V hoặc đính kèm ảnh, rồi nhấn Enter",
+            accepted_file_types=["jpg", "jpeg", "png", "webp", "bmp", "tif", "tiff"],
+            max_files=10,
+            max_file_size_mb=20,
+            enable_voice_input=False,
+            key="query_image_paste",
+        )
+        if paste_result and paste_result.get("files"):
+            for pasted_file in paste_result["files"]:
+                encoded = pasted_file["data"]
+                if "," in encoded:
+                    encoded = encoded.split(",", 1)[1]
+                image_data = base64.b64decode(encoded)
+                digest = hashlib.sha256(image_data).hexdigest()
+                st.session_state["pasted_query_images"].setdefault(
+                    digest, {"name": pasted_file.get("name", f"pasted_{digest[:8]}.png"), "data": image_data}
+                )
+        pasted_images = st.session_state["pasted_query_images"]
+        if pasted_images:
+            st.caption(f"{len(pasted_images)} pasted image(s) ready. Use Ctrl+V in the field above, then press Enter.")
+            if st.button("Clear pasted images", key="clear_pasted_query_images"):
+                st.session_state["pasted_query_images"] = {}
+                st.rerun()
+        uploads = list(uploaded_files or []) + [
+            NamedBytesIO(item["name"], item["data"]) for item in pasted_images.values()
+        ]
+    use_mnn = st.checkbox("Rerank EffoVPR_R Top 10 with local MNN", value=False)
     display_image_top_n = st.selectbox("Similar images to display", (1, 5, 10), index=2)
     display_label_top_n = st.selectbox("Likely locations to display", (1, 5, 10), index=2)
     show_thumbnails = st.checkbox("Load gallery thumbnails from Hugging Face", value=True)
@@ -280,6 +349,7 @@ for query_name, query_image in queries:
         features, metadata, _ = index_bundles[name]
         resolution = int(artifact["inference"]["resolution"])
         rerank_config = artifact["reranking"]
+        model_uses_mnn = use_mnn and name == "EFFOVPR_R" and hf_gallery is not None
         embedding = global_embedding(model, query_image, resolution)
         label, class_score = predict_label(model, artifact, embedding)
         similarities = features @ embedding[0].detach().cpu().numpy().astype(np.float32)
@@ -288,7 +358,7 @@ for query_name, query_image in queries:
         indices = np.argpartition(-similarities, top_k - 1)[:top_k]
         indices = indices[np.argsort(-similarities[indices])]
         candidates = []
-        query_local = local_descriptors(model, query_image, resolution, rerank_config) if use_mnn and hf_gallery is not None else None
+        query_local, query_points = local_descriptor_data(model, query_image, resolution, rerank_config) if model_uses_mnn else (None, None)
         for global_rank, index in enumerate(indices, start=1):
             row = metadata.iloc[int(index)]
             item = {
@@ -300,15 +370,19 @@ for query_name, query_image in queries:
                 "mnn_matches": None,
                 "dataset_index": int(row["dataset_index"]),
             }
-            if use_mnn and hf_gallery is not None:
+            if model_uses_mnn:
                 candidate_image = hf_gallery[item["dataset_index"]]["image"].convert("RGB")
-                candidate_local = local_descriptors(model, candidate_image, resolution, rerank_config)
+                candidate_local, candidate_points = local_descriptor_data(model, candidate_image, resolution, rerank_config)
                 matches = mutual_nearest_neighbor_matches(
                     query_local, candidate_local, threshold=float(rerank_config["T2"])
                 )
                 item["mnn_matches"] = int(matches.shape[0])
+                item["_candidate_image"] = candidate_image
+                item["_candidate_points"] = candidate_points
+                item["_matches"] = matches
+                item["_selected_patch_count"] = int(candidate_local.shape[0])
             candidates.append(item)
-        if use_mnn and hf_gallery is not None:
+        if model_uses_mnn:
             candidates.sort(key=lambda item: (-item["mnn_matches"], item["global_rank"]))
             for rank, item in enumerate(candidates, start=1):
                 item["final_rank"] = rank
@@ -317,6 +391,7 @@ for query_name, query_image in queries:
             "score": class_score,
             "candidates": candidates,
             "label_candidates": label_candidates,
+            "query_points": query_points,
         }
 
     left, right = st.columns(2, gap="large")
@@ -331,7 +406,7 @@ for query_name, query_image in queries:
             st.subheader("Most similar images")
             st.caption(
                 f"Top {min(display_image_top_n, len(result['candidates']))} individual gallery images, ranked by cosine similarity"
-                + (" and reranked by MNN within the Top 10." if use_mnn and hf_gallery is not None else ".")
+                + (" and reranked by MNN within the Top 10." if name == "EFFOVPR_R" and use_mnn and hf_gallery is not None else ".")
             )
             displayed_images = result["candidates"][:display_image_top_n]
             image_table = pd.DataFrame([
@@ -345,6 +420,26 @@ for query_name, query_image in queries:
                 for item in displayed_images
             ])
             st.dataframe(image_table, hide_index=True, use_container_width=True)
+
+            if name == "EFFOVPR_R" and use_mnn and hf_gallery is not None and result["candidates"]:
+                best = result["candidates"][0]
+                figure = draw_mnn_matches(
+                    query_image, best["_candidate_image"], result["query_points"],
+                    best["_candidate_points"], best["_matches"],
+                )
+                t2 = float(loaded_models[name][1]["reranking"]["T2"])
+                st.caption(
+                    f"EffoVPR_R MNN: {best['mnn_matches']} mutual matches above T2={t2:.2f}; "
+                    f"selected patches — query {len(result['query_points'])}, Top 1 {best['_selected_patch_count']}."
+                )
+                if best["mnn_matches"] == 0:
+                    st.warning("Không có cặp MNN nào vượt T2 nên ảnh này không có đường nối. Hãy thử query khác hoặc xem số patch được chọn ở trên.")
+                visualization_caption = (
+                    "Query (left) and reranked Top-1 (right); lines are accepted MNN patch matches."
+                    if best["mnn_matches"] else
+                    "Query (left) and reranked Top-1 (right); no MNN pair passed the configured threshold."
+                )
+                st.image(figure, caption=visualization_caption, use_container_width=True)
 
             st.subheader("Most likely locations")
             st.caption(
