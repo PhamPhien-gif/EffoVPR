@@ -14,7 +14,7 @@ with torch.inference_mode():
     qkv = model.extract_qkv(pixels, config['reranking']['layer'])
 ```
 
-Use_Model.ipynb accepts query/gallery file paths, retrieves Top 10 with global cosine similarity, then reranks those candidates by local MNN count (ties retain global rank).
+`notebooks/inference/Use_Model.ipynb` predicts labels for images in `data/examples/` using the EffoVPR_G model bundle; use this model bundle in the Streamlit comparison app.
 Download config.json and model.safetensors as separate files; do not zip the model.
 
 Verification against best checkpoint:

@@ -13,9 +13,9 @@ python -m pip install -r requirements.txt
 python -m streamlit run app.py
 ```
 
-The app loads model and gallery bundles from `Models/EffoVPR_G/` and `Models/EffoVPR_R/`, and example queries from `Images/`. It imports inference and reranking code from the root `src/` package. See [the Streamlit guide](docs/STREAMLIT.md).
+The app loads model and gallery bundles from `Models/EffoVPR_G/` and `Models/EffoVPR_R/`, and example queries from `data/examples/`. It imports inference and reranking code from the root `src/` package. See [the Streamlit guide](docs/STREAMLIT.md).
 
-`Use_Model.ipynb` is a separate local notebook for predicting labels for images in `Images/`; it does not power the Streamlit app.
+`notebooks/inference/Use_Model.ipynb` is a separate local notebook for predicting labels for images in `data/examples/`; it does not power the Streamlit app.
 
 ## Kaggle notebooks
 
@@ -23,10 +23,10 @@ The root-level notebooks are the training and evaluation workflows. The main not
 
 ## Project map
 
-- `app.py`, `Models/`, `Images/`: local Streamlit app and its model/gallery bundles.
-- Root `.ipynb` files: Kaggle workflows and the local `Use_Model.ipynb` notebook.
+- `app.py`, `Models/`, `data/examples/`: local Streamlit app, model/gallery bundles, and demo query images.
+- `notebooks/training/`: Kaggle training and evaluation workflows.
+- `notebooks/inference/Use_Model.ipynb`: local label-prediction notebook.
 - Root `src/`: shared model, artifact-loading, retrieval, and reranking code used by the app and local notebook.
-- `Use_Model/src/`: a separate snapshot of some inference modules; it is not imported by the current app or root notebook.
-- `evaluation/`: saved summary JSON results, intentionally retained.
+- `evaluation/results/`: saved summary JSON results, intentionally retained.
 - `docs/`: usage guides, implementation specification, and paper.
 - `scripts/`, `tests/`, `artifacts/`, and old `*_outputs/` folders have been removed from this working copy. Kaggle notebooks embed pipeline code; a local pipeline run can recreate `artifacts/` only if its corresponding source is restored.

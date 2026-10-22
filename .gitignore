@@ -20,6 +20,8 @@ __pycache__/
 
 outputs/
 results/
+!evaluation/results/
+!evaluation/results/*.json
 runs/
 
 # Local databases / indexes
@@ -29,7 +31,9 @@ qdrant_db/
 *.sqlite3
 
 # Large datasets
-data/
+data/*
+!data/examples/
+!data/examples/**
 datasets/
 downloads/
 

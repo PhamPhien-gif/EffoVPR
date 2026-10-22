@@ -20,6 +20,7 @@ from src.effovpr.utils.model_artifact import load_model_artifact, prepare_image
 
 ROOT = Path(__file__).resolve().parent
 MODELS_DIR = ROOT / "Models"
+EXAMPLE_IMAGES_DIR = ROOT / "data" / "examples"
 DATASET_ID = "PhamPhien/VN_Attractions"
 DATASET_SPLIT = "train"
 IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".png", ".webp", ".bmp", ".tif", ".tiff"}
@@ -249,15 +250,15 @@ with st.sidebar:
     if source_mode == "Images folder":
         local_options = sorted(
             str(path.relative_to(ROOT))
-            for path in (ROOT / "Images").rglob("*")
+            for path in EXAMPLE_IMAGES_DIR.rglob("*")
             if path.is_file() and path.suffix.lower() in IMAGE_EXTENSIONS
-        ) if (ROOT / "Images").is_dir() else []
+        ) if EXAMPLE_IMAGES_DIR.is_dir() else []
         if local_options:
             local_selection = st.multiselect(
                 "Choose query images", local_options, default=local_options[: min(2, len(local_options))]
             )
         else:
-            st.info("No supported images found in Images/. Select Upload images instead.")
+            st.info("No supported images found in data/examples/. Select Upload images instead.")
     else:
         uploaded_files = st.file_uploader(
             "Upload query images", type=["jpg", "jpeg", "png", "webp", "bmp", "tif", "tiff"],

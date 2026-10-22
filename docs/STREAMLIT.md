@@ -19,7 +19,7 @@ Install the dependencies inside the same virtual environment used to launch Stre
 - Shows each model's CosFace place prediction, the most similar individual gallery images, and the most likely locations grouped by label.
 - Provides separate Top 1, 5, or 10 controls for the similar images and likely locations. Location scores are the mean cosine similarity of that label's best three gallery images; Softmax percentages are relative across all gallery labels.
 - Optionally reranks EffoVPR_R's Top 10 with local MNN descriptors and visualizes the query-to-Top-1 MNN correspondences. EffoVPR_G remains ranked by cosine similarity.
-- Accepts images from `Images/` or uploaded files.
+- Accepts images from `data/examples/` or uploaded files.
 - In `Upload images`, accepts pasted clipboard images with Ctrl+V as well as file selection.
 
 To paste a query image, focus the paste field in the sidebar, press Ctrl+V, then press Enter. The image is queued until you clear it; click **Compare EffoVPR_G and EffoVPR_R** to run the demo. Clipboard paste requires a supported browser and a secure context; `localhost` works for local use.
